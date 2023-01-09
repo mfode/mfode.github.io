@@ -18,7 +18,7 @@ tags: [resume]
 - Excellent skills in deductive reasoning and analysis; great attention to detail; excellent organizational skills
 - Works well in team settings; proven ability to work independently; extremely self-motivated and curious
 - Executive-facing experience delivering information to key stakeholders effectively
-Experience mentoring team members; managing projects requiring collaboration with multiple teams
+- Experience mentoring team members; managing projects requiring collaboration with multiple teams
 
 ## Experience
 
