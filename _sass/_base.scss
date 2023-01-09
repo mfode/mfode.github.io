@@ -1,0 +1,294 @@
+/**
+ * Reset some basic elements
+ */
+body, h1, h2, h3, h4, h5, h6,
+p, blockquote, pre, hr,
+dl, dd, ol, ul, li,
+figure, figcaption,
+table, th, td {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    word-wrap: break-word;
+}
+
+html {
+  // Eliminate jumps in horizontal centering by forcing a scroll bar
+  // https://css-tricks.com/eliminate-jumps-in-horizontal-centering-by-forcing-a-scroll-bar/
+  overflow-y: scroll;
+}
+
+sub, sup {
+    line-height: 0;
+}
+
+
+
+/**
+ * Basic styling
+ */
+body {
+    font-family: $base-font-family;
+    @include responsive('font-size', $base-font-sizes);
+    @include responsive('line-height', $spacing-units);
+    color: $text-color;
+    background-color: $background-color;
+    -webkit-text-size-adjust: 100%;
+}
+
+
+
+/**
+ * Set `margin-bottom` to maintain vertical rhythm
+ */
+h1, h2, h3, h4, h5, h6,
+p, blockquote, pre,
+figcaption, table, aside
+%vertical-rhythm {
+    @include responsive('margin-bottom', $spacing-units-half);
+}
+
+article > ul, article > ol, article > dl
+%vertical-rhythm {
+    @include responsive('margin-bottom', $spacing-units-half);
+}
+
+ul.post-list {
+    @include responsive('margin-bottom', $spacing-units-half);
+}
+
+/**
+ * Images
+ */
+img {
+    max-width: 100%;
+    vertical-align: middle;
+}
+
+
+
+/**
+ * Figures
+ */
+figure > img {
+    display: block;
+}
+
+figcaption {
+    font-size: $small-font-size;
+}
+
+
+
+/**
+ * Lists
+ */
+ul, ol {
+    margin-left: $hr-spacing-unit;
+}
+
+li {
+    > ul,
+    > ol {
+         margin-bottom: 0;
+    }
+}
+
+
+
+/**
+ * Headings
+ */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 300;
+}
+
+h1 {
+    font-size: $h1-font-size;
+    @include responsive('line-height', $spacing-units-three-half);
+    @include responsive('margin-top', $spacing-units);
+}
+
+h2 {
+    font-size: $h2-font-size;
+    @include responsive('line-height', $spacing-units-three-half);
+    @include responsive('margin-top', $spacing-units-half);
+}
+
+h3 {
+    font-size: $h3-font-size;
+    @include responsive('line-height', $spacing-units);
+    @include responsive('margin-top', $spacing-units-half);
+}
+
+h4 {
+    font-size: $h4-font-size;
+    @include responsive('line-height', $spacing-units);
+    @include responsive('margin-top', $spacing-units-half);
+}
+
+
+
+/**
+ * Links
+ */
+a {
+    color: $brand-color;
+    text-decoration: underline;
+
+    &:hover, &:focus {
+        color: $text-color;
+    }
+}
+
+
+
+/**
+ * Blockquotes
+ */
+blockquote {
+    border-left: 4px solid $grey-color-light;
+    padding-left: $hr-spacing-unit / 2;
+
+    > :last-child {
+        margin-bottom: 0;
+    }
+}
+
+
+
+/**
+ * Code formatting
+ */
+pre,
+code {
+    //border: 1px solid $grey-color-light;
+    border-radius: 3px;
+    background-color: #eee;
+    font-family: $mono-font-family;
+    @include responsive('font-size', $mono-font-sizes);
+    vertical-align: top;
+}
+
+code {
+    padding: 1px 4px;
+}
+
+pre {
+    overflow-x: auto;
+    //line-height: $mono-line-height;
+    @include responsive('line-height', $mono-line-heights);
+    @include responsive('padding-top', $spacing-units-half);
+    @include responsive('padding-bottom', $spacing-units-half);
+    padding-left: $hr-spacing-unit / 2;
+    padding-right: $hr-spacing-unit / 2;
+
+    > code {
+        border: 0;
+        padding-right: 0;
+        padding-left: 0;
+    }
+}
+
+
+
+/**
+ * Wrapper
+ */
+.wrapper {
+    max-width: -webkit-calc(#{$width} - (#{$hr-spacing-unit} / 2));
+    max-width:         calc(#{$width} - (#{$hr-spacing-unit} / 2));
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: $hr-spacing-unit;
+    padding-left: $hr-spacing-unit;
+    @extend %clearfix;
+
+    @include media-query($on-palm) {
+        max-width: -webkit-calc(#{$width} - (#{$hr-spacing-unit}));
+        max-width:         calc(#{$width} - (#{$hr-spacing-unit}));
+        padding-right: $hr-spacing-unit / 2;
+        padding-left: $hr-spacing-unit / 2;
+    }
+}
+
+
+
+/**
+ * Clearfix
+ */
+%clearfix {
+
+    &:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+}
+
+
+
+/**
+ * Icons
+ */
+.icon {
+
+    > svg {
+        display: inline-block;
+        width: 16px;
+        height: 16px;
+        vertical-align: middle;
+
+        path {
+            fill: $grey-color;
+        }
+    }
+}
+
+
+
+/**
+ * Tables
+ */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  empty-cells: show;
+}
+
+th {
+  text-align: left;
+}
+
+th {
+  vertical-align: bottom;
+}
+
+td {
+  vertical-align: top;
+}
+
+th, td {
+  padding-right: $hr-spacing-unit / 2;
+}
+
+tr {
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='1' height='1'><rect x='0' y='0' width='1' height='1' fill='" + $grey-color-light + "'></rect></svg>");
+  background-repeat: repeat-x;
+}
+
+thead > tr {
+  background-position: bottom;
+}
+
+tbody > tr {
+  background-position: top;
+}
+
+
+
+/**
+ * Asides
+ */
+aside {
+}
