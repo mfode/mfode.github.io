@@ -11,7 +11,7 @@ tags: [resume]
 - fodemichael@gmail.com
 - [LinkedIn](https://www.linkedin.com/in/michael-fode-15098891/)
 
-## Summary of qualifications
+## Summary of Qualifications
 
 - Recognized for excellent written and verbal communication skills; able to communicate well with diverse groups
 - Advanced skills in Tableau, Excel, SQL (Snowflake, Google BigQuery, Microsoft SQL Server), Google Analytics, experience with Adobe Analytics, Power BI, GitHub, dbt
